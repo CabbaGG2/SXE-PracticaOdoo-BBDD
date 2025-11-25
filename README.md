@@ -114,3 +114,25 @@ Realizamos los pasos de instalación y puesta en marcha vistos en prácticas ant
       WHERE move_type = 'out_refund' and state = 'posted' ORDER BY date DESC;
     ```
 </details>
+<details><summary><h3>Apartado 6</h3></summary>
+  
+  - Utilizando las tablas de odoo, obtén un listado de empresas clientes, a las que se les ha emitido más de dos facturas de venta (solo venta) confirmadas, mostrando los siguientes datos:
+    - Nombre de la empresa
+    - Número de facturas 
+    - Total facturado SIN IMPUESTOS
+    <br><br>
+    ![PyCharm_plugins](imagenes/14.png)
+    <br><br>
+  - Con la instrucción WHERE solo cogería las facturas de venta.
+  - Con la instrucción GROUP BY agropamos por nombre de empresa.
+  - Con la instrucción HAVING count(*) > 2 nos aseguramos que los grupos tengan más de 2 entradas.
+  - COUNT nos cuenta el total de valores de un dato.
+  - SUM suma todas las entradas de una columna.
+  <br><br>
+  - Sentencia SQL:
+     ```bash
+    SELECT invoice_partner_display_name as nombre_empresa, count(*) as numero_facturas,sum(amount_untaxed_signed) as total_facturado FROM public.account_move
+      WHERE move_type = 'out_invoice' and state = 'posted' 
+      GROUP BY invoice_partner_display_name having count(*)>2;
+    ```
+</details>
