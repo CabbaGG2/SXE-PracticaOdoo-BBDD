@@ -136,3 +136,21 @@ Realizamos los pasos de instalación y puesta en marcha vistos en prácticas ant
       GROUP BY invoice_partner_display_name having count(*)>2;
     ```
 </details>
+<details><summary><h3>Apartado 7</h3></summary>
+  
+  - Crea una sentencia que actualice el correo de los contactos cuyo dominio es @bilbao.example.com a @bilbao.bizkaia.neus
+    <br><br>
+    ![PyCharm_plugins](imagenes/15.png)
+    <br><br>
+  - Utilizamos REPLACE para cambiar todas las coincidencias de example.com a bizkaia.eus.
+  <br><br>
+  - Sentencia SQL:
+     ```bash
+    UPDATE public.res_partner SET email = REPLACE(email,'example.com','bizkaia.eus')
+      WHERE email like '%@bilbao.example.com'
+    ```
+  - Comprobamos:
+    <br><br>
+    ![PyCharm_plugins](imagenes/16.png)
+    <br><br>
+</details>
