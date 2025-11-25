@@ -68,3 +68,15 @@ Realizamos los pasos de instalación y puesta en marcha vistos en prácticas ant
     ```
   
 </details>
+<details><summary><h3>Apartado 3</h3></summary>
+  
+  - Realizámos una consulta sencilla en una pestaña de SQL en la que ordenamos los datos de manera descendiente utilizando la instrucción ORDER BY.
+  <br><br>
+  ![PyCharm_plugins](imagenes/11.png)
+  <br><br>
+  - Sentencia SQL:
+     ```bash
+    SELECT * FROM public."EmpresasFCT" ORDER BY "fechaContacto" DESC;
+    ```
+  
+</details>
