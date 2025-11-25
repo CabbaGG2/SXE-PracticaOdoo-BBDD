@@ -43,3 +43,28 @@ Realizamos los pasos de instalación y puesta en marcha vistos en prácticas ant
     ```
   
 </details>
+<details><summary><h3>Apartado 2</h3></summary>
+  
+  - Hacemos click derecho en la tabla "EmpresasFCT" ➡ Scripts ➡ INSERT Script.
+  <br><br>
+  ![PyCharm_plugins](imagenes/8.png)
+  <br><br>
+  - Nos saldrá una pestaña nueva con una sentencia SQL para insertar de base.
+  <br><br>
+  ![PyCharm_plugins](imagenes/9.png)
+  - Modificamos la sentencia para insertar 5 filas de datos.
+  <br><br>
+  ![PyCharm_plugins](imagenes/10.png)
+  <br><br>
+  - Sentencia SQL:
+     ```bash
+    INSERT INTO public."EmpresasFCT"(
+	nombre, "quiereAlumnos", "numAlumnos", "fechaContacto")
+	    VALUES ('NovaByte Solutions', TRUE, 3, '2021-12-15'),
+		('TechWave Dynamics', FALSE, 0, '2022-12-12'),												
+		('AetherSoft Labs', FALSE, 1, '2010-05-30'),
+		('BlueCircuit Innovations', TRUE, 4, '2015-02-15'),
+		('QuantumEdge Systems', TRUE, 15, '2015-01-04');
+    ```
+  
+</details>
