@@ -95,3 +95,22 @@ Realizamos los pasos de instalación y puesta en marcha vistos en prácticas ant
         WHERE is_company = false and city != 'Tracy' ORDER BY commercial_company_name;
       ```
 </details>
+<details><summary><h3>Apartado 5</h3></summary>
+  
+  - Utilizando las tablas de odoo, obtén un listado de empresas proveedoras, que han emitido algún reembolso (facturas rectificativas de proveedor)
+    - Nombre de la empresa
+    - Número de factura
+    - Fecha de la factura 
+    - Total factura SIN impuestos
+    - Ordenadas por fecha de factura de modo que la primera sea la más reciente.
+  <br><br>
+    ![PyCharm_plugins](imagenes/13.png)
+    <br><br>
+  -  Para realizar esta consulta nos aseguramos que las facturas eran rectificativas con el campo "move_type" y con "state" verificamos que no sean un borrador. 
+    <br><br>
+  - Sentencia SQL:
+     ```bash
+    SELECT invoice_partner_display_name, name, date, amount_untaxed FROM public.account_move
+      WHERE move_type = 'out_refund' and state = 'posted' ORDER BY date DESC;
+    ```
+</details>
