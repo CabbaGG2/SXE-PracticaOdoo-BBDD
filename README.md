@@ -78,5 +78,20 @@ Realizamos los pasos de instalación y puesta en marcha vistos en prácticas ant
      ```bash
     SELECT * FROM public."EmpresasFCT" ORDER BY "fechaContacto" DESC;
     ```
+</details>
+<details><summary><h3>Apartado 4</h3></summary>
   
+  - Realiza una consulta que permita obtener un listado de todos los contactos de Odoo (no empresas) con la siguiente información:
+    - Nombre
+    - Cuya ciudad NO sea Tracy, y código postal 95304
+    - Nombre comercial de la empresa
+    - ordenados alfabéticamente por el nombre comercial de la empresa,
+      <br><br>
+      ![PyCharm_plugins](imagenes/12.png)
+      <br><br>
+    - Sentencia SQL:
+       ```bash
+      SELECT name as nombre ,commercial_company_name as nombre_empresa FROM public.res_partner
+        WHERE is_company = false and city != 'Tracy' ORDER BY commercial_company_name;
+      ```
 </details>
